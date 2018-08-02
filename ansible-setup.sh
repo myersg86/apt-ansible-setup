@@ -45,9 +45,6 @@ else
 fi
 
 sudo sh -c "echo 'alias kahu-ansible=ansible-pull -vvv -U https://github.com/lightcrestops/kahu-ansible.git' >> /root/.bashrc"
-
-#####################################
-# Display real installation process #
 echo ""
 echo "Prep-work Complete"
 echo ""

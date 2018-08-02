@@ -1,5 +1,5 @@
 #!/bin/bash
-set -xv
+set -e
 # Install dependencies & recommendations
 sudo dpkg --configure --pending &&
 sudo dpkg --configure -a &&
@@ -44,27 +44,13 @@ else
     echo "Ansible already installed"
 fi
 
-#####################################
-# Display real installation process #
-echo ""
-echo "Prep-work Complete"
-echo ""
-echo "Ansible installation was successful."
-echo ""
-echo "You can run playbooks directly from a github repo using:"
-echo "ansible-pull -U https://github.com/USER/REPO.git PLAYBOOK.yml"
-    sudo apt-get update &&
-    sudo apt-get install ansible --install-recommends -y
-else
-    echo "Ansible already installed"
-fi
+echo "alias kahu-ansible='ansible-pull -vvv -U https://github.com/lightcrestops/kahu-ansible.git'" >> /root/.bashrc
 
 #####################################
 # Display real installation process #
 echo ""
 echo "Prep-work Complete"
 echo ""
-echo "Ansible installation was successful."
-echo ""
-echo "You can run playbooks directly from a github repo using:"
-echo "ansible-pull -U https://github.com/USER/REPO.git PLAYBOOK.yml"
+echo "Now, you can run ansible with: "
+echo "kahu-ansible PLAYBOOK.yml"
+# echo "ansible-pull -vvv -U https://github.com/lightcrestops/kahu-ansible playbook.yml"

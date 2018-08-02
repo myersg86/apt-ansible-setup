@@ -2,7 +2,7 @@
 
 # Configure dpkg & install apt utils
 sudo dpkg --configure -a &&
-sudo apt-get install --install-recommends -y apt aptitude &&
+sudo apt-get install -y apt aptitude &&
 sudo apt-get update
 # Install dependencies & recommendations
 sudo apt-get install --install-recommends -y git git-core software-properties-common dirmngr vim python-apt &&

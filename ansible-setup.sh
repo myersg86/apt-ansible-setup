@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install dependencies & recommendations
-sudo dpkg --configure -pending &&
+sudo dpkg --configure --pending &&
 sudo dpkg --configure -a &&
 sudo apt-get install apt aptitude apt-cacher apt-listchanges &&
 sudo apt-get update &&

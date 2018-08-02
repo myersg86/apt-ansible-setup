@@ -1,8 +1,13 @@
 #!/bin/bash
 
 # Install dependencies & recommendations
-sudo apt update
-sudo apt-get install --install-recommends -y git git-core software-properties-common dirmngr vim aptitude python-apt
+sudo dpkg --configure -pending &&
+sudo dpkg --configure -a &&
+sudo apt-get install apt aptitude apt-cacher apt-listchanges &&
+sudo apt-get update &&
+sudo apt update &&
+sudo apt install -f &&
+sudo apt-get install --install-recommends -y aptitude git git-core software-properties-common dirmngr vim python-apt
 
 # Install ansible
 if ! grep -q "ansible/ansible" /etc/apt/sources.list /etc/apt/sources.list.d/*; then

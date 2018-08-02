@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+
 # Install dependencies & recommendations
 sudo dpkg --configure --pending &&
 sudo dpkg --configure -a &&

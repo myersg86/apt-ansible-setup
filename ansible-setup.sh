@@ -14,17 +14,16 @@ if ! grep -q "ansible/ansible" /etc/apt/sources.list /etc/apt/sources.list.d/*; 
     echo ""
     echo "Adding latest Ansible repo to /etc/apt/sources.list "
     sudo sh -c "echo 'deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main' >> /etc/apt/sources.list"
-fi
-
-if ! hash ansible >/dev/null 2>&1; then
     echo "Installing Ansible..."
     sudo apt-get update &&
-    sudo apt-get install ansible --install-recommends -y &&
+    sudo apt-get install ansible --install-recommends -y
     sudo sh -c "echo 'alias kahu-ansible=ansible-pull -vvv -U https://github.com/lightcrestops/kahu-ansible.git' >> /root/.bashrc"
 else
     echo "Ansible already installed"
 fi
 
+#####################################
+# Display real installation process #
 echo ""
 echo "Prep-work Complete"
 echo ""
